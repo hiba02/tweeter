@@ -1,0 +1,17 @@
+nav {
+    font-family: 'Bungee';
+    position: sticky;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding: 1.5em;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.navWrite {
+font-size: 0.8em;
+font-family: 'Source Sans Pro';
+}
