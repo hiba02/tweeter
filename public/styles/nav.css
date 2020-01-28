@@ -9,9 +9,9 @@ nav {
     z-index: -1;
     display: flex;
     justify-content: space-between;
-  }
+}
   
 .navWrite {
-font-size: 0.8em;
-font-family: 'Source Sans Pro';
+    font-size: 0.8em;
+    font-family: 'Source Sans Pro';
 }

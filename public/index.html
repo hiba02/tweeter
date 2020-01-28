@@ -20,7 +20,8 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>    
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -46,7 +47,7 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="http://localhost:8080/tweets">
           <div class="tweetStyleText">
-            <textarea rows="1" name="text" placeholder="What are you humming about?"></textarea>
+            <textarea rows="2" name="text" placeholder="What are you humming about?"></textarea>
           </div>
           <div class="formButtonCounter">
             <input id="tweetButton" type="submit" value="TWEET">
