@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />    
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -40,12 +41,21 @@
       </headerclass="avatar">
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p>
-        Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor hodor hodor; hodor hodor; hodor hodor hodor! Hodor hodor HODOR! Hodor hodor... Hodor hodor hodor...
-      </p>
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="http://localhost:8080/tweets">
+          <div class="tweetStyleText">
+            <textarea rows="1" name="text" placeholder="What are you humming about?"></textarea>
+          </div>
+          <div class="formButtonCounter">
+            <input id="tweetButton" type="submit" value="TWEET">
+            <span id="characterCounter" class="counter">140</span>
+          </div>
+
+        </form>
+      </section>
+
     </main>
   </body>
 </html>
