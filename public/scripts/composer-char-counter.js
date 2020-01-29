@@ -1,12 +1,16 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  let countChar = 0; 
+  
   $('.tweetStyleText textarea').keypress(function(event){
-    countChar++;
+    let countChar = 140; 
     //console.log('countChar:  ', countChar);
-    if (countChar > 140) {
+    charNum = $(this).val().length + 1;
+    console.log('char:  ',charNum);
+    countChar = countChar - charNum;
+    if (countChar < 0) {
       $('.counter').css({"color":"red"});
     }
     $('.counter').text(countChar);
+    
   });
 });
