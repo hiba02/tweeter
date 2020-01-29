@@ -44,22 +44,20 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <div class="insideContainer">
-        <section class="new-tweet">
-          <h2>Compose Tweet</h2>
-          <form method="POST" action="http://localhost:8080/tweets">
-            <div class="tweetStyleText">
-              <textarea rows="2" name="text" placeholder="What are you humming about?"></textarea>
-            </div>
-            <div class="formButtonCounter">
-              <input class="tweetButton" type="submit" value="TWEET">
-              <span class="counter">140</span>
-            </div>
-          </form>
-        </section>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="http://localhost:8080/tweets">
+          <div class="tweetStyleText">
+            <textarea rows="2" name="text" placeholder="What are you humming about?"></textarea>
+          </div>
+          <div class="formButtonCounter">
+            <input class="tweetButton" type="submit" value="TWEET">
+            <span class="counter">140</span>
+          </div>
+        </form>
+      </section>
 
-<<<<<<< HEAD
- 
-=======
+      <section id="tweet-container">  
       <article class="tweet-container">
         <div class="tweet-container-header">
           <div style="flex-grow: 1;">
@@ -73,39 +71,20 @@
               <h2></h2>
           </div>
         </div>
->>>>>>> 1f2c47575207a346df2b46dc2064dc3681425320
 
 
-        <section id="tweets-container">
-          <article class="tweet-container">
-            <div class="tweet-container-header">
-              <div style="flex-grow: 1;">
-                  <img class="newton" src="/images/newton.png">
-              </div>
-              <div style="flex-grow: 1;">
-                  <h1>Newton</h1> 
-              </div>
-              <div style="flex-grow: 8;"></div>
-              <div style="flex-grow: 1;">
-                  <h2></h2>
-              </div>
-            </div>
-
-
-            <form method="POST" action="http://localhost:8080/tweets">
-              <div class="tweetStyleText">
-                <textarea rows="2" name="text" placeholder="Wow! What a tweeterific app!"></textarea>
-              </div>
-            <footer class="formButtonCounter">
-              <span>10 days ago</span>
-              <span class="counter">icons</span>
-            </footer>
-            </form>
-          </article>
-        </section>
-      
+        <form method="POST" action="http://localhost:8080/tweets">
+          <div class="tweetStyleText">
+            <textarea rows="2" name="text" placeholder="Wow! What a tweeterific app!"></textarea>
+          </div>
+        <footer class="formButtonCounter">
+          <span>10 days ago</span>
+          <span class="counter">icons</span>
+        </footer>
+        </form>
+      </article>
+      </section>
       </div>
     </main>
-
   </body>
 </html>
