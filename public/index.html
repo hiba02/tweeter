@@ -22,6 +22,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>    
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/mouse-hover-effect.js"></script>
   </head>
 
   <body>
@@ -32,17 +33,17 @@
     </nav>
       <header>
         <div class="avatar">
-            <img src="/images/profile-hex.png"> 
-            <div class="yourName">
-              <h2>YoonSoon Kang</h2>
-            </div>
+          <img src="/images/profile-hex.png"> 
+          <div class="yourName">
+            <h2>YoonSoon Kang</h2>
+          </div>
         </div>
         <br>
 
       </headerclass="avatar">
     <!-- Page-specific (main) content here -->
     <main class="container">
-
+      <div class="insideContainer">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="http://localhost:8080/tweets">
@@ -50,13 +51,30 @@
             <textarea rows="2" name="text" placeholder="What are you humming about?"></textarea>
           </div>
           <div class="formButtonCounter">
-            <input id="tweetButton" type="submit" value="TWEET">
-            <span id="characterCounter" class="counter">140</span>
+            <input class="tweetButton" type="submit" value="TWEET">
+            <span class="counter">140</span>
           </div>
-
         </form>
       </section>
 
+      <article class="tweet-container">
+        <div class="tweet-container-header">
+          <img class="newton" src="/images/newton.png"> 
+          <h5>@Lazzeri</h5>
+        </div>
+
+
+        <form method="POST" action="http://localhost:8080/tweets">
+          <div class="tweetStyleText">
+            <textarea rows="2" name="text" placeholder="Wow! What a tweeterific app!"></textarea>
+          </div>
+        <footer class="formButtonCounter">
+          <span>10 days ago</span>
+          <span class="counter">icons</span>
+        </footer>
+        </form>
+      </article>
+      </div>
     </main>
   </body>
 </html>

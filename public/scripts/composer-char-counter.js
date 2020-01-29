@@ -5,8 +5,8 @@ $(document).ready(function() {
     countChar++;
     //console.log('countChar:  ', countChar);
     if (countChar > 140) {
-      $('#characterCounter').css({"color":"red"});
+      $('.counter').css({"color":"red"});
     }
-    $('#characterCounter').text(countChar);
+    $('.counter').text(countChar);
   });
 });

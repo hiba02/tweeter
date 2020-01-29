@@ -7,7 +7,7 @@ textarea {
     background-color: #f4f1ec;
 }
 
-#tweetButton {
+.tweetButton {
     background-color: rgb(52, 59, 155);
     border: none;
     color: white;
@@ -21,17 +21,46 @@ textarea {
     cursor: pointer;
   }
 
-  #characterCounter {
-    font-family: 'Bungee';
-    text-align: center;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 900;
-    margin: 4px 2px;
-    color: rgb(79, 85, 99);
-  }
+.counter {
+  font-family: 'Bungee';
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 900;
+  margin: 4px 2px;
+  color: rgb(79, 85, 99);
+}
 
 .formButtonCounter {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+
+.tweetStyleText {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.tweet-container {
+  padding-top: 1em;
+  margin-top: 10%;
+  border: 4px solid black;
+}
+
+.tweet-container-shadow {
+  padding-top: 1em;
+  margin-top: 10%;
+  border: 4px solid black;
+  box-shadow: 10px 10px powderblue;
+}
+
+.tweet-container-header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-bottom: 2em;
 }
