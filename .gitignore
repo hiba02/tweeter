@@ -1,3 +1,6 @@
 node_modules/
 .env
 .DS_Store
+backup.html
+public/scripts/clientBackup.js
+test.html

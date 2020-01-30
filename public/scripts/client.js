@@ -95,7 +95,9 @@ const createTweetElement = function(tweet) {
           <h2>${tweet.user.handle}</h2>
       </div>
     </div>
-    <p>${tweet.content.text}</p>
+    <div class="tweet-container-content">
+    ${tweet.content.text}
+    </div>
     <footer class="formButtonCounter">
       <span>${tweet.created_at}</span>
       <span class="counter">icons</span>
@@ -138,9 +140,9 @@ const createTweetElement = function(tweet) {
 
   loadTweets();
 
-  debugger;
 
-  $('.tweet-container').on(function(){})
+
+  $('.tweet-container')
   .mouseover(function(){
     $(this).removeClass('tweet-container')
     .addClass('tweet-container-shadow');
