@@ -21,17 +21,39 @@ $(document).ready(function() {
     
     event.preventDefault();
     
+    //validation in textarea
+    //??????????????????????
+    // beforesend: even if I used return, I still see 400 (Bad request)
     $.ajax('http://localhost:8080/tweets',{
         method: 'POST',
+        beforeSend: function(){
+          let textAreaContent = $('textarea').val();  
+          //console.log('textAreaContent',textAreaContent);
+          console.log('textAreaContent.length', textAreaContent.length);
+          if (textAreaContent.length === 0) {
+            return alert('Please type any content before pushing tweet button.');
+            
+          } else if (textAreaContent.length > 140) {
+            return alert('Your tweet content is too long. Please type less than 140 characters.');
+          }
+        },
         data: $(this).serialize(),
         success: function(data){
-          console.log('data inside ajax', data);
+          console.log('data inside ajax', $(this).serialize());
         }
     })
     .then(function(data){
       console.log('data', data);
-      loadTweets();
+      loadOneTweet();
+      //$(document).scrollTop($(document).height());
     })
+    // .then(
+    //   function(){
+    //     $('html').animate({
+    //       scrollTop: $('html').height()
+    //     }, 'slow');
+    //   }
+    // )
   });
 
 
@@ -70,11 +92,7 @@ const createTweetElement = function(tweet) {
     console.log(tweetsArray);
     $tweet = '';
     for (let eachTweet of tweetsArray) {
-      // console.log('eachTweet.user.name:  ', eachTweet.user.name);
-      // console.log('eachTweet.user.avatars:  ', eachTweet.user.avatars);      
-      // console.log('eachTweet.user.handle:  ', eachTweet.user.handle);
-      // console.log('eachTweet.content.text:  ', eachTweet.content.text);
-      // console.log('eachTweet.created_at: ', eachTweet.created_at);
+
       $tweet += createTweetElement(eachTweet);
     }
     $('#tweet-container').append($tweet);
@@ -91,7 +109,20 @@ const createTweetElement = function(tweet) {
  
   loadTweets();
 
-
+  const loadOneTweet = function() {
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:8080/tweets'
+    })
+    .then(
+      function(response){
+        let lastTweet = response.pop();
+        $tweet = '';
+        $tweet = createTweetElement(lastTweet);
+        $('#tweet-container').append($tweet);
+      }     
+    )
+  }
 });
 
 //renderTweets(data);
