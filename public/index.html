@@ -19,22 +19,25 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>    
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <span class="navWrite"><b>Write</b> a new tweet</span>
+      <div class="avatar">
+        <img src="/images/profile-hex.png"> 
+        <div class="yourName">
+          YoonSoon<span class="lastName"> Kang</span>
+        </div>
+      </div>  
+      <span class="navWrite">Write a new tweet</span>
     </nav>
       <header>
-        <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-          <div class="yourName">
-            <h2>YoonSoon Kang</h2>
-          </div>
-        </div>
+
         <br>
 
       </header>
@@ -59,9 +62,7 @@
       </section>
       </div>
     </main>
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>    
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
     
   </body>
 </html>

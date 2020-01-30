@@ -44,23 +44,37 @@ $(document).ready(function() {
   //   });
   // });
 
+
+
+
   const testComments = function() {
     // $('#testAjax').text('Hello world');
     $('#testAjax').text($('form').serialize());
     const tweetComments = $('form').serialize();
     console.log(tweetComments);
+    console.log(tweetComments.length);
+
   };
 
+
+
+  ///??? POST => 404 error!!
+  // need to change GET to POST
   const $button = $('.tweetButton');
   $button.on('click', function() {
     event.preventDefault();
     $.ajax('http://localhost:8080/tweets',{
-        method: 'POST',
+        method: 'GET',
         name: name 
     })
     .then(testComments)
-
   });
+
+
+  //form validation
+  //Implement validation before sending the form data to the server. 
+
+
 
   // $("button").click(function(){
   //   $("div").text($("form").serialize());
@@ -142,16 +156,22 @@ const createTweetElement = function(tweet) {
 
 
 
-  $('.tweet-container')
-  .mouseover(function(){
-    $(this).removeClass('tweet-container')
-    .addClass('tweet-container-shadow');
-    console.log('mouse in');
-  })
-  .mouseout(function(){
-    $(this).removeClass('tweet-container-shadow')
-    .addClass('tweet-container');
-  })
+
+
+
+
+
+
+//   $('.tweet-container')
+//   .mouseover(function(){
+//     $(this).removeClass('tweet-container')
+//     .addClass('tweet-container-shadow');
+//     console.log('mouse in');
+//   })
+//   .mouseout(function(){
+//     $(this).removeClass('tweet-container-shadow')
+//     .addClass('tweet-container');
+//   })
 
 });
 
