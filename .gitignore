@@ -3,3 +3,4 @@ node_modules/
 .DS_Store
 backup.html
 public/scripts/clientBackup.js
+test.html

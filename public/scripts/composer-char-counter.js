@@ -5,7 +5,7 @@ $(document).ready(function() {
     let countChar = 140; 
     //console.log('countChar:  ', countChar);
     charNum = $(this).val().length + 1;
-    console.log('char:  ',charNum);
+    // console.log('char:  ',charNum);
     countChar = countChar - charNum;
     if (countChar < 0) {
       $('.counter').css({"color":"red"});
