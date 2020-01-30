@@ -16,46 +16,26 @@
 
 $(document).ready(function() {
 
-  const testComments = function() {
-    // $('#testAjax').text('Hello world');
-    //$('#testAjax').text($('form').serialize());
-    event.preventDefault();
-    const tweetComments = $('form').serialize();
-    console.log(tweetComments);
-    console.log(tweetComments.length);
-  };
 
-  ///?????????????
-  // event.preventDefault(); not working!!
-  const $button = $('.tweetButton');
-  $button.submit(function(event) {
+  $('#tweetForm').submit(function(event) {
+    
     event.preventDefault();
-    $.ajax({
+    
+    $.ajax('http://localhost:8080/tweets',{
         method: 'POST',
-        url: 'http://localhost:8080/tweets'
+        data: $(this).serialize(),
+        success: function(data){
+          console.log('data inside ajax', data);
+        }
     })
-    .then(testComments)
+    .then(function(data){
+      console.log('data', data);
+      loadTweets();
+    })
   });
 
 
-  //form validation
-  //Implement validation before sending the form data to the server. 
 
-
-
-  // $("button").click(function(){
-  //   $("div").text($("form").serialize());
-  // });
-
-  ////////
-//   $button.on('click', function() {
-//     $.ajax({
-//         method: 'GET',
-//         url: `${serverURL}/comments.json`
-//     })
-//     .then(showComments)
-//     .fail(handleCommentLoadErrors);
-// });
 
 
 const createTweetElement = function(tweet) {
@@ -108,6 +88,7 @@ const createTweetElement = function(tweet) {
     })
     .then(renderTweets);
   };
+ 
   loadTweets();
 
 
