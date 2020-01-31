@@ -82,39 +82,39 @@ const escape =  function(str) {
   return p.innerHTML;
 }
 
-  const createTweetElement = function(tweet) {
-    // const userTweet = $('div').addClass('tweet-container-content').text(tweet.content.text);
-    const userTweet = `${escape(tweet.content.text)}`;
-    console.log('userTweet', userTweet);
-      let $tweet = `<article class="tweet-container">
-      <div class="tweet-container-header">
-        <div style="flex-grow: 1;">
-            <img class="newton" src="${tweet.user.avatars}">
-        </div>
-        <div style="flex-grow: 1;">
-            <h1>${tweet.user.name}</h1> 
-        </div>
-        <div style="flex-grow: 8;"></div>
-        <div style="flex-grow: 1;">
-            <h2>${tweet.user.handle}</h2>
-        </div>
+const createTweetElement = function(tweet) {
+  // const userTweet = $('div').addClass('tweet-container-content').text(tweet.content.text);
+  const userTweet = `${escape(tweet.content.text)}`;
+  console.log('userTweet', userTweet);
+    let $tweet = `<article class="tweet-container">
+    <div class="tweet-container-header">
+      <div style="flex-grow: 1;">
+          <img class="newton" src="${tweet.user.avatars}">
       </div>
-      
-      <div class="tweet-container-content">
-      ${userTweet}
-      </div> 
+      <div style="flex-grow: 1;">
+          <h1>${tweet.user.name}</h1> 
+      </div>
+      <div style="flex-grow: 8;"></div>
+      <div style="flex-grow: 1;">
+          <h2>${tweet.user.handle}</h2>
+      </div>
+    </div>
+    
+    <div class="tweet-container-content">
+    ${userTweet}
+    </div> 
 
-      <footer class="formButtonCounter">
-        <span>${tweet.created_at}</span>
-        <span class="counter">icons</span>
-      </footer>
-    </article>`
-    $(".tweet-container").append(userTweet);
-    console.log("createTweetElement: tweet.content.text", tweet.content.text);
-    console.log("createTweetElement: tweet", tweet);
-    console.log($("<div class='tweet-container-content'>").text(tweet.content.text));
-    return $tweet;
-  };
+    <footer class="formButtonCounter">
+      <span>${tweet.created_at}</span>
+      <span class="counter">icons</span>
+    </footer>
+  </article>`
+
+  console.log("createTweetElement: tweet.content.text", tweet.content.text);
+  console.log("createTweetElement: tweet", tweet);
+  console.log($("<div class='tweet-container-content'>").text(tweet.content.text));
+  return $tweet;
+};
 
 
 
@@ -149,12 +149,15 @@ const escape =  function(str) {
         let lastTweet = response.pop();
         $tweet = '';
         $tweet = createTweetElement(lastTweet);
-        $('#tweet-container').append($tweet);
+        $('#tweet-container').prepend($tweet);
       }     
     )
   }
   // page loading -> textarea
   // $(document).ready(function(){ $("textarea").focus();})
+
+  
+
 });
 
 //renderTweets(data);
