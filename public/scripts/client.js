@@ -17,6 +17,7 @@
 $(document).ready(function() {
 
 
+
   $('#tweetForm').submit(function(event) {
     
     event.preventDefault();
@@ -27,9 +28,11 @@ $(document).ready(function() {
     $.ajax('http://localhost:8080/tweets',{
         method: 'POST',
         beforeSend: function(){
-          let textAreaContent = $('textarea').val();  
-          //console.log('textAreaContent',textAreaContent);
-          console.log('textAreaContent.length', textAreaContent.length);
+
+          let textAreaContent = $('textarea').val();
+          
+          console.log('escape textAreaContent:  ', textAreaContent);  
+
           if (textAreaContent.length === 0) {
             return alert('Please type any content before pushing tweet button.');
             
@@ -60,31 +63,58 @@ $(document).ready(function() {
 
 
 
-const createTweetElement = function(tweet) {
 
-    let $tweet = `<article class="tweet-container">
-    <div class="tweet-container-header">
-      <div style="flex-grow: 1;">
-          <img class="newton" src="${tweet.user.avatars}">
+  // ${$("<div class='tweet-container-content'>").text(tweet.content.text)}
+
+  
+
+//   <div class="tweet-container-content">
+//   ${tweet.content.text}
+//   </div>
+
+// ${$('div').text(tweet.content.text).addClass('tweet-container-content')}
+
+
+// const userTweet = `${escape(tweet.content.text)}`;
+const escape =  function(str) {
+  let p = document.createElement('p');
+  p.appendChild(document.createTextNode(str));
+  return p.innerHTML;
+}
+
+  const createTweetElement = function(tweet) {
+    // const userTweet = $('div').addClass('tweet-container-content').text(tweet.content.text);
+    const userTweet = `${escape(tweet.content.text)}`;
+    console.log('userTweet', userTweet);
+      let $tweet = `<article class="tweet-container">
+      <div class="tweet-container-header">
+        <div style="flex-grow: 1;">
+            <img class="newton" src="${tweet.user.avatars}">
+        </div>
+        <div style="flex-grow: 1;">
+            <h1>${tweet.user.name}</h1> 
+        </div>
+        <div style="flex-grow: 8;"></div>
+        <div style="flex-grow: 1;">
+            <h2>${tweet.user.handle}</h2>
+        </div>
       </div>
-      <div style="flex-grow: 1;">
-          <h1>${tweet.user.name}</h1> 
-      </div>
-      <div style="flex-grow: 8;"></div>
-      <div style="flex-grow: 1;">
-          <h2>${tweet.user.handle}</h2>
-      </div>
-    </div>
-    <div class="tweet-container-content">
-    ${tweet.content.text}
-    </div>
-    <footer class="formButtonCounter">
-      <span>${tweet.created_at}</span>
-      <span class="counter">icons</span>
-    </footer>
-  </article>`
-  return $tweet;
-};
+      
+      <div class="tweet-container-content">
+      ${userTweet}
+      </div> 
+
+      <footer class="formButtonCounter">
+        <span>${tweet.created_at}</span>
+        <span class="counter">icons</span>
+      </footer>
+    </article>`
+    $(".tweet-container").append(userTweet);
+    console.log("createTweetElement: tweet.content.text", tweet.content.text);
+    console.log("createTweetElement: tweet", tweet);
+    console.log($("<div class='tweet-container-content'>").text(tweet.content.text));
+    return $tweet;
+  };
 
 
 
@@ -123,6 +153,8 @@ const createTweetElement = function(tweet) {
       }     
     )
   }
+  // page loading -> textarea
+  // $(document).ready(function(){ $("textarea").focus();})
 });
 
 //renderTweets(data);
