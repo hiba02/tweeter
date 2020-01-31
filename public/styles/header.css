@@ -1,5 +1,5 @@
 header {
-    height: 400px;
+    height: 1rem;
     width: 100%;
     
 }
@@ -7,12 +7,13 @@ header {
 https://www.w3.org/Style/Examples/007/center.en.html
 */
 .avatar {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     opacity: 0.3; 
+    margin-top: -12rem;
 }
 
 .yourName {

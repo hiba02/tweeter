@@ -16,13 +16,16 @@
 
 
 $(document).ready(function() {
-  console.log('bbbbb');
+  
 
   $('.arrow').click(function(){
-    alert('hi');
-    console.log('click');
+    $('textarea').focus();
   })
-
+  // $('#arrowButton').mouseover(function(){
+  //   $('#arrowButton img').css("height", "200%");
+  //   console.log('bbbbb');
+  // })
+  
 
   $('#tweetForm').submit(function(event) {
     
