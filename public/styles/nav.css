@@ -1,17 +1,28 @@
 nav {
     font-family: 'Bungee';
-    position: sticky;
-    height: 500px;
+    position: fixed;
+    height: 22rem;
     width: 100%;
     background-color: #4056A1;
     color: #FFFFFF;
-    padding: 1.5em;
-    z-index: -1;
+    padding: 1.5rem;
+    z-index:1;
+    top:0;
+}
+
+.upperTitle {
     display: flex;
     justify-content: space-between;
 }
-  
+
 .navWrite {
     font-size: 0.8em;
     font-family: 'Source Sans Pro';
 }
+
+.arrow {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 2rem
+}
+

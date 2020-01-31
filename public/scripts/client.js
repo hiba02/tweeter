@@ -14,8 +14,14 @@
 
 
 
-$(document).ready(function() {
 
+$(document).ready(function() {
+  console.log('bbbbb');
+
+  $('.arrow').click(function(){
+    alert('hi');
+    console.log('click');
+  })
 
 
   $('#tweetForm').submit(function(event) {
@@ -42,11 +48,11 @@ $(document).ready(function() {
         },
         data: $(this).serialize(),
         success: function(data){
-          console.log('data inside ajax', $(this).serialize());
+          // console.log('data inside ajax', $(this).serialize());
         }
     })
     .then(function(data){
-      console.log('data', data);
+      // console.log('data', data);
       loadOneTweet();
       //$(document).scrollTop($(document).height());
     })
@@ -85,7 +91,7 @@ const escape =  function(str) {
 const createTweetElement = function(tweet) {
   // const userTweet = $('div').addClass('tweet-container-content').text(tweet.content.text);
   const userTweet = `${escape(tweet.content.text)}`;
-  console.log('userTweet', userTweet);
+  // console.log('userTweet', userTweet);
     let $tweet = `<article class="tweet-container">
     <div class="tweet-container-header">
       <div style="flex-grow: 1;">
@@ -110,16 +116,16 @@ const createTweetElement = function(tweet) {
     </footer>
   </article>`
 
-  console.log("createTweetElement: tweet.content.text", tweet.content.text);
-  console.log("createTweetElement: tweet", tweet);
-  console.log($("<div class='tweet-container-content'>").text(tweet.content.text));
+  // console.log("createTweetElement: tweet.content.text", tweet.content.text);
+  // console.log("createTweetElement: tweet", tweet);
+  // console.log($("<div class='tweet-container-content'>").text(tweet.content.text));
   return $tweet;
 };
 
 
 
   const renderTweets = function(tweetsArray) {
-    console.log(tweetsArray);
+    // console.log(tweetsArray);
     $tweet = '';
     for (let eachTweet of tweetsArray) {
 
@@ -156,7 +162,6 @@ const createTweetElement = function(tweet) {
   // page loading -> textarea
   // $(document).ready(function(){ $("textarea").focus();})
 
-  
 
 });
 
