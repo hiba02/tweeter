@@ -1,29 +1,45 @@
 header {
-    height: 1rem;
+    height: 400px;
     width: 100%;
-    
+    margin-top: 100px;
+    position: fixed;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    z-index: 1;
+    background-image: url("../images/background.png");
+    background-color: darkgoldenrod;
+  
 }
-/*
-https://www.w3.org/Style/Examples/007/center.en.html
-*/
+
 .avatar {
     position: fixed;
-    top: 50%;
+ /*    top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     opacity: 0.3; 
-    margin-top: -12rem;
+    margin-top: -12rem; */
+    z-index: 2;
+/*    position: relative;
+    display: flex;
+    justify-content: center;*/
 }
 
 .yourName {
-    position: absolute;
-    margin-top: 20px;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%); 
-    opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    font-family: 'Bungee';
+
 }
 .lastName {
     font-family: 'Source Sans Pro';
+    color: white;
+}
+
+h2 {
+    flex-flow: row wrap;
 }

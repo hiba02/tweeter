@@ -30,28 +30,24 @@ $(document).ready(function() {
   $('#tweetForm').submit(function(event) {
     
     event.preventDefault();
-    
+    let textAreaContent = $('textarea').val();
+          
+    console.log('escape textAreaContent:  ', textAreaContent);  
+
+    if (textAreaContent.length === 0) {
+      
+      // return alert('Please type any content before pushing tweet button.');
+      return $('.new-tweet').prepend("<p class='caution'>Please type any content before pushing tweet button.</p>");
+      
+    } else if (textAreaContent.length > 140) {
+      // return alert('Your tweet content is too long. Please type less than 140 characters.');
+      return $('.new-tweet').prepend("<p class='caution'>Your tweet content is too long. Please type less than 140 characters.</p>");
+    }
     //validation in textarea
     //??????????????????????
     // beforesend: even if I used return, I still see 400 (Bad request)
     $.ajax('http://localhost:8080/tweets',{
         method: 'POST',
-        beforeSend: function(){
-
-          let textAreaContent = $('textarea').val();
-          
-          console.log('escape textAreaContent:  ', textAreaContent);  
-
-          if (textAreaContent.length === 0) {
-            
-            // return alert('Please type any content before pushing tweet button.');
-            return $('.new-tweet').prepend("<p class='caution'>Please type any content before pushing tweet button.</p>");
-            
-          } else if (textAreaContent.length > 140) {
-            // return alert('Your tweet content is too long. Please type less than 140 characters.');
-            return $('.new-tweet').prepend("<p class='caution'>Your tweet content is too long. Please type less than 140 characters.</p>");
-          }
-        },
         data: $(this).serialize(),
         success: function(data){
           // console.log('data inside ajax', $(this).serialize());
