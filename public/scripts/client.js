@@ -16,20 +16,60 @@
 
 
 $(document).ready(function() {
+  $('.new-tweet').hide();
+
+  $('#arrowButton').click(function(){
+    $('.new-tweet').toggle();
+    $('.new-tweet').css('marginTop','80px');
+    $(this).scrollTop();
+    $('textarea').focus();
+      
+  });
+
+  $('.navWrite').click(function(){
+    $('textarea').focus();
+  });
+
+  // setInterval(function(){
+  //   $('#arrowButton').slideUp()
+  //   $('#arrowButton').slideDown()
+  // },500)
+
+  //??????????????????????????????
+  //animation of arrow is not working
+  setInterval(function(){
+    $('#arrowButton').animate({left: '250px'});
+    $('#arrowButton').animate({right: '250px'});
+  },500);
+
+
+
+
   
 
-  $('.arrow').click(function(){
-    $('textarea').focus();
-  })
+  //new Tweet up and down
+  // $('.arrowButton').click(function(){
+  //   $('.new-tweet').slideUp()
+  // })
+
+  // $('.arrowButton').click(function(){
+  //   $('.new-tweet').toggle()
+  // })
+
+
 
   // $('#arrowButton').mouseover(function(){
   //   $('#arrowButton img').css("height", "200%");
   //   console.log('bbbbb');
   // })
   
-  setInterval(function(){
-    $('arrowButton').animate("height", "120%");
-  }, 500);
+  // setInterval(function(){
+  //   $('arrowButton').animate("height", "120%");
+  // }, 500);
+
+
+  $('.arrow').css('cursor', 'pointer');
+  $('.navWrite').css('cursor', 'pointer');
 
   $('#tweetForm').submit(function(event) {
     
@@ -120,7 +160,11 @@ const createTweetElement = function(tweet) {
 
     <footer class="formButtonCounter">
       <span>${tweet.created_at}</span>
-      <span class="counter">icons</span>
+      <span class="counter">
+      <img src="/images/flag.png">
+      <img src="/images/retweet.png">
+      <img src="/images/heart.png">
+      </span>
     </footer>
   </article>`
 

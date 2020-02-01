@@ -31,6 +31,10 @@ textarea {
   color: rgb(79, 85, 99);
 }
 
+.counter img:not(:last-child) {
+  padding-right: 1.5rem;
+}
+
 .formButtonCounter {
   display: flex;
   justify-content: space-between;
