@@ -23,13 +23,21 @@ nav {
 }
 
 .arrow {
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     margin-right: 4rem;
     margin-bottom: 0rem;
 }
 
-
+.arrowMove {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 4rem;
+    margin-bottom: 0rem;
+    padding-top: 1rem;
+}
 /*
 .arrow img:hover{
     display: flex;

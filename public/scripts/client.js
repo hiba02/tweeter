@@ -30,22 +30,32 @@ $(document).ready(function() {
     $('textarea').focus();
   });
 
+  setInterval(function(){
+    $("#arrowAnimation").toggleClass("arrowMove");
+
+  },500)
   // setInterval(function(){
   //   $('#arrowButton').slideUp()
   //   $('#arrowButton').slideDown()
   // },500)
 
   //??????????????????????????????
-  //animation of arrow is not working
-  setInterval(function(){
-    $('#arrowButton').animate({left: '250px'});
-    $('#arrowButton').animate({right: '250px'});
-  },500);
+  // animation of arrow is not working
+  // setInterval(function(){
+  //   $('#arrowButton').animate({paddingTop: '5px'});
+  //   $('#arrowButton').animate({paddingBottom: '5px'});
+  // },500);
+
+
+  // setInterval(function(){
+  //   $('#arrowButton').css('paddingTop','5px')
+  //   $('#arrowButton').css('paddingBottom','5px');
+  // },500);
 
 
 
 
-  
+
 
   //new Tweet up and down
   // $('.arrowButton').click(function(){
