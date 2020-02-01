@@ -33,6 +33,52 @@ main {
   top: 500px;
 }
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ header {
+  height: 400px;
+  width: 100%;
+  margin-top: 100px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  
+  z-index: 1;
+  background-image: url("../images/background.png");
+  background-color: darkgoldenrod;
+  
+}
+ @media only screen and (min-width: 1024px) {
+  
+  main {
+    width: 60%;
+  }
+
+  header {
+    top: 100px;
+    width: 30%;
+    float: left;
+    position: relative;
+    margin-left: auto;
+    margin-left: auto;
+   
+  }
+  main {
+    position: relative;
+    top: 150px;
+    width: 45%;
+  }
+
+  
+  body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+
+ }
