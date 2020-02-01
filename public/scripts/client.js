@@ -21,11 +21,15 @@ $(document).ready(function() {
   $('.arrow').click(function(){
     $('textarea').focus();
   })
+
   // $('#arrowButton').mouseover(function(){
   //   $('#arrowButton img').css("height", "200%");
   //   console.log('bbbbb');
   // })
   
+  setInterval(function(){
+    $('arrowButton').animate("height", "120%");
+  }, 500);
 
   $('#tweetForm').submit(function(event) {
     
@@ -58,6 +62,7 @@ $(document).ready(function() {
       $('.caution').remove();
       loadOneTweet();
       //$(document).scrollTop($(document).height());
+      $('textarea').val('');
     })
     // .then(
     //   function(){
@@ -128,13 +133,19 @@ const createTweetElement = function(tweet) {
 
 
   const renderTweets = function(tweetsArray) {
-    // console.log(tweetsArray);
+    console.log(tweetsArray);
     $tweet = '';
-    for (let eachTweet of tweetsArray) {
+    // for (let eachTweet of tweetsArray) {
+      
+    //   $tweet += createTweetElement(eachTweet);
+    // }
 
-      $tweet += createTweetElement(eachTweet);
+    // to take last element first 
+    for (let i = 0; i < tweetsArray.length; i++) {
+      let lastTweet = tweetsArray.pop();
+      $tweet += createTweetElement(lastTweet);
     }
-    $('#tweet-container').append($tweet);
+    $('#tweet-container').prepend($tweet);
   };
 
 

@@ -1,4 +1,16 @@
-
+header {
+  height: 400px;
+  width: 100%;
+  margin-top: 100px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  
+  z-index: 1;
+  background-image: url("../images/background.png");
+  background-color: darkgoldenrod;
+  
+}
 
 .avatar {
     margin-top: 20px;
@@ -34,9 +46,27 @@ h2 {
 
 @media only screen and (min-width: 1024px) {
    .avatar {
-       margin-top: 2rem;
+    margin-top: 2rem;
+
    }
    
+   h2 {
+    align-items:baseline;
+   }
+
+   header {
+    top: 100px;
+    width: 30%;
+    float: left;
+    position: relative;
+    margin-left: auto;
+    margin-left: auto;
+   
+  }
+
+  img {
+   padding-left: 12px; 
+  }
     /*
     .hero {
       width: 33.3%;
