@@ -21,6 +21,16 @@ textarea {
     cursor: pointer;
   }
 
+.icons {
+  font-family: 'Bungee';
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 900;
+  margin-left: 0.5rem 0.2rem;
+  color: rgb(79, 85, 99);
+}
+
 .counter {
   font-family: 'Bungee';
   text-align: center;
@@ -31,7 +41,7 @@ textarea {
   color: rgb(79, 85, 99);
 }
 
-.counter img:not(:last-child) {
+.icons img:not(:last-child) {
   padding-right: 1.5rem;
 }
 
