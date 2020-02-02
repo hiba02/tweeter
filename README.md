@@ -9,7 +9,7 @@ This repository is the web application built with
 
 that the user simply tweet with short message.
 
-### This app is built for the lighthouse lab 2nd project to improve my front-end skills.  
+
 
 
 ## Final Product
