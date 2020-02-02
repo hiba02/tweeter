@@ -2,12 +2,20 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This repository is the web application built with 
+
+* Front end: HTML, CSS, Ajax, and jQuery
+* Back end: Node, Express and MongoDB
+
+that the user simply tweet with short message.
+
+### This app is built for the lighthouse lab 2nd project to improve my front-end skills.  
+
 
 ## Final Product
-!["screenshot of urls-page"](https://github.com/hiba02/tinyapp/blob/master/doc/urls-page.png?raw=true)
-!["screenshot of register-page"](https://github.com/hiba02/tinyapp/blob/master/doc/register-page.png?raw=true)
-!["screenshot of login-page"](https://github.com/hiba02/tinyapp/blob/master/doc/login-page.png?raw=true)
+!["screenshot of tweet-destop"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-destop.png?raw=true)
+!["screenshot of tweet-mobile"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-mobile.png?raw=true)
+!["screenshot of tweet-write"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-write.png?raw=true)
 
 ## Getting Started
 
