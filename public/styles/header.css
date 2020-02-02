@@ -4,27 +4,16 @@ header {
   margin-top: 100px;
   position: fixed;
   display: flex;
-  justify-content: center;
-  
+  justify-content: center; 
   z-index: 1;
   background-image: url("../images/background.png");
   background-color: darkgoldenrod;
-  
 }
 
 .avatar {
     margin-top: 20px;
     align-items:baseline;
- /*    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.3; 
-    margin-top: -12rem; */
     z-index: 3;
-/*    position: relative;
-    display: flex;
-    justify-content: center;*/
 }
 
 .yourName {
@@ -47,7 +36,6 @@ h2 {
 @media only screen and (min-width: 1024px) {
    .avatar {
     margin-top: 2rem;
-
    }
    
    h2 {
@@ -61,42 +49,9 @@ h2 {
     position: relative;
     margin-left: auto;
     margin-left: auto;
-   
   }
 
   img {
-   padding-left: 12px; 
-  }
-    /*
-    .hero {
-      width: 33.3%;
-      float: left;
+    padding-left: 12px; 
     }
-  
-    .feature {
-      line-height: 300px;
-    }
-  
-    .menu {
-      background-color: #111111;
-      color: #f0f0f0;
-      text-align: left;
-    }
-  
-    .tagline {
-      display: inline;
-      font-style: italic;
-      font-weight: normal;
-      font-size: 12px;
-      color: tomato;
-      float: right;
-    }
-  
-    .main {
-      max-width: 1024px;
-      font-size: 16px;
-      margin: 0 auto;
-    }
-    */
-
   }
