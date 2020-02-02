@@ -23,7 +23,9 @@ $(document).ready(function() {
     $('.new-tweet').css('marginTop','80px');
     $(this).scrollTop();
     $('textarea').focus();
-      
+    $('textarea').val('');
+    $('.counter').text(140);
+    $('.counter').css({"color":"rgb(46, 48, 51)"});
   });
 
   $('.navWrite').click(function(){
@@ -89,13 +91,15 @@ $(document).ready(function() {
     console.log('escape textAreaContent:  ', textAreaContent);  
 
     if (textAreaContent.length === 0) {
-      
+      $('.new-tweet p').slideUp();
       // return alert('Please type any content before pushing tweet button.');
       return $('.new-tweet').prepend("<p class='caution'>Please type any content before pushing tweet button.</p>");
-      
+    
     } else if (textAreaContent.length > 140) {
+      $('.new-tweet p').slideUp();
       // return alert('Your tweet content is too long. Please type less than 140 characters.');
-      return $('.new-tweet').prepend("<p class='caution'>Your tweet content is too long. Please type less than 140 characters.</p>");
+      return $('.new-tweet').prepend("<p class='caution'>Your tweet content is too long. Please type less than 140 characters. Click Write a new tweet (arrow) button again.</p>");
+      //event.stopPropagation();
     }
     //validation in textarea
     //??????????????????????
