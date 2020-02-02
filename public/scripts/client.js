@@ -35,6 +35,7 @@ $(document).ready(function() {
         $('.caution').remove();
         loadOneTweet();
         $('textarea').val('');
+        $('.new-tweet').hide();
       });
   });
 
@@ -54,7 +55,7 @@ $(document).ready(function() {
             <img class="newton" src="${tweet.user.avatars}">
         </div>
         <div style="flex-grow: 1;">
-            <h1>${tweet.user.name}</h1> 
+            <h2>${tweet.user.name}</h2> 
         </div>
         <div style="flex-grow: 8;"></div>
         <div style="flex-grow: 1;">
@@ -62,7 +63,7 @@ $(document).ready(function() {
         </div>
       </div>
       <div class="tweet-container-content">
-      ${userTweet}
+        <h2>${userTweet}</h2>
       </div> 
       <footer class="formButtonCounter">
         <span>${tweet.created_at}</span>
