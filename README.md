@@ -12,7 +12,9 @@ that the user simply tweet with short message.
 
 ## Final Product
 !["screenshot of tweet-destop"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-destop.png?raw=true)
+
 !["screenshot of tweet-mobile"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-mobile.png?raw=true)
+
 !["screenshot of tweet-write"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-write.png?raw=true)
 
 ## Getting Started
