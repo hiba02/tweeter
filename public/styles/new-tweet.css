@@ -21,7 +21,13 @@ textarea {
     cursor: pointer;
   }
 
+.icons:hover {
+  display: block;
+
+}
+
 .icons {
+ 
   font-family: 'Bungee';
   text-align: center;
   text-decoration: none;
@@ -29,6 +35,7 @@ textarea {
   font-weight: 900;
   margin-left: 0.5rem 0.2rem;
   color: rgb(79, 85, 99);
+  cursor: pointer;
 }
 
 .counter {

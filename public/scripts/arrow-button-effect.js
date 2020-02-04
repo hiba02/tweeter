@@ -27,5 +27,5 @@ $(document).ready(function() {
   },500);
   $('.arrow').css('cursor', 'pointer');
   $('.navWrite').css('cursor', 'pointer');
-  
+  // $('.icons').css('cursor', 'pointer');
 });
